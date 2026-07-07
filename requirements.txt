@@ -1,0 +1,9 @@
+# TestCase Agent — 多智能体测试用例编写框架 依赖
+#
+# 核心依赖 (必需)
+openai>=1.0.0
+openpyxl>=3.0.0
+
+# 文档解析 (按需安装，框架会优雅降级)
+# python-docx>=0.8.11    # .docx 文件读取
+# pdfplumber>=0.10.0     # .pdf 文件读取
