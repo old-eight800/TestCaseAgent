@@ -4,7 +4,7 @@
 
 ## 解决了什么问题
 
-现有 `~/.claude/skills/` 下有四个测试用例相关 skill（`test_case_generate`、`test-case-generate-with-prd-code`、`test-case-quality-evaluator`、`test-coverage-gap`），它们都是**对话式 skill**——在当前会话里触发一次，人工搬运中间结果。存在三个痛点：
+现有 `~/.claude/skills/` 下有四个测试用例相关 skill，它们都是**对话式 skill**——在当前会话里触发一次，人工搬运中间结果。存在三个痛点：
 
 | 痛点 | 本框架解法 |
 |------|-----------|
@@ -204,12 +204,3 @@ testcase-agent/
     └── glossary.md                # 可选：领域术语表
 ```
 
-## 与现有生态的关系
-
-| 现有能力 | 如何整合 |
-|---------|---------|
-| `test_case_generate` skill | 列结构/类型矩阵/优先级规则 → case_designer_prompt |
-| `test-case-generate-with-prd-code` skill | 三方对齐逻辑 + R/D/C 差异标记 → rule_extractor |
-| `test-case-quality-evaluator` skill | 五维评分标准 → reviewer_prompt，生成的 xmind 可被其直接评分 |
-| `test-coverage-gap` skill | 未来可扩展：git diff + coverage gap 作为新输入源 |
-| `agentscope-testgen` | 编排思路被镜像（Analyzer→Generator→Reviewer→Fix Loop），但用 `openai` SDK 替代 AgentScope，代码零复用 |
