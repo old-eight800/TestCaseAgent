@@ -86,8 +86,8 @@ python main.py --prd docs/prd/mall-stay-strategy.md --module mallstay
 # PRD + 代码模式（自动从 Controller/Service 抽取校验规则）
 python main.py \
   --prd docs/prd/mall-stay-strategy.md \
-  --code ../ai-products/src/main/java/.../MallStayStrategyController.java \
-  --code ../ai-products/src/main/java/.../MallStayStrategyService.java \
+  --code ../com/src/main/java/.../Controller.java \
+  --code ../com/src/main/java/.../Service.java \
   --module mallstay
 
 # 完整三输入 + 风格参考 + 双格式输出
@@ -96,7 +96,7 @@ python main.py \
   --code Controller.java \
   --design docs/design.md \
   --module mallstay \
-  --few-shot output/mallstay/prev_cases.xlsx \
+  --few-shot output/prev_cases.xlsx \
   --format xlsx,xmind
 
 # 快速出稿（跳过审查修复循环）
@@ -147,9 +147,6 @@ output/<module>/
 - 500 = 业务规则拒绝（BusinessException）
 - -1 = 未捕获系统异常
 
-## 策略类型
-- LJ = 靓机
-- CSJ = 成色机
 ```
 
 ## 命令行参数
